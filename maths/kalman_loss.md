@@ -51,7 +51,7 @@ $$
 $$
 R =
 \begin{bmatrix}
-1.0
+(0.1)^2
 \end{bmatrix}
 $$
 
@@ -67,6 +67,41 @@ x_4
 \end{bmatrix}
 $$
 
+### State Transition Jacobian
+$$
+\frac{\partial f}{\partial x} =
+\begin{bmatrix}
+1 & 1 & 0 & 0 \\
+0 & 0 & \frac{1}{1000}(u_1 - u_2 - x_4) & -frac{x_3}{1000} \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{bmatrix}
+$$
+
+### State Input Jacobian
+
+$$
+\frac{\partial f}{\partial u} =
+\begin{bmatrix}
+0 & 0 \\
+\frac{x_3}{1000} & -\frac{x_3}{1000} \\
+0 & 0 \\
+0 & 0 \\
+\end{bmatrix}
+$$
+
+### Prediction
+
+$$
+x^+ = f(x)
+$$
+
+Note the special prediction that includes the input noise
+$$
+P^+ = \frac{\partial f}{\partial x}P \frac{\partial f}{\partial x}^\top +
+\frac{\partial f}{\partial u}M\frac{\partial f}{\partial u}^\top + Q
+$$
+
 ## Measurement Model
 
 $$
@@ -75,6 +110,8 @@ h(x) =
 x_1
 \end{bmatrix}
 $$
+
+We will use the typical KF kalman update since this model is linear.
 
 ## Initialization
 
