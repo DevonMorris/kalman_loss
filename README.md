@@ -32,7 +32,10 @@ control inputs)
 
 I want to infer the following state variables.
 * "True Weight" (weight with daily fluctuations smoothed)
+* Daily "True Weight" loss/gain
 * Caloric Conversion (number of 1000s of calories equating to 1lb lost)
 * Non-active daily calories ([BMR](https://en.wikipedia.org/wiki/Basal_metabolic_rate) + [TEF](https://en.wikipedia.org/wiki/Specific_dynamic_action) + [NEAT](https://en.wikipedia.org/wiki/Thermogenesis))
 
 ## Mathematical Formulation
+
+Check out the [maths](./maths) folder and the documentation contained therein.
