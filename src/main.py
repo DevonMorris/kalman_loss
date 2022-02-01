@@ -12,7 +12,7 @@ Q = np.matrix([
 M = np.matrix([
     [150**2, 0.0],
     [0.0, 50**2]])
-R = np.matrix([0.1**2])
+R = np.matrix([0.2**2])
 
 def state_transition(x : np.matrix, u : np.matrix) -> np.matrix:
     return np.matrix([[x[0,0] + x[1,0]],
